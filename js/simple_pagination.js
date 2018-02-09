@@ -40,7 +40,7 @@
         var object = this;
         var isFirstInit = false; 
         // create the pagination buttons
-        document.getElementById("buttons").innerHTML = pageButtons(this.pageCount,page);
+        document.getElementById("pagination-div").innerHTML = pageButtons(this.pageCount,page);
         // CSS Stuff
         document.getElementById("id"+page).setAttribute("class","pagination-button active");
         
