@@ -24,15 +24,12 @@
         if (arguments[0] && typeof arguments[0] == "object") {
             this.tableId = arguments[0].tableId;
             this.rowPerPage = arguments[0].rowPerPage;
-
-            console.log(arguments[0]);
         }
         initialize.call(this)
 
 
     }
     SimplePagination.prototype.sort = function(page) {
-        console.log(this.table);
         var rows = this.th;
         var startIndex = ((this.rowPerPage * page) - this.rowPerPage);
 
@@ -74,7 +71,7 @@
             for (var i = loopStartFrom, ii=0; i < this.numRows; i++,ii++) {
                 this.tr[ii] = this.table.rows[i].outerHTML;
             }
-            this.table.insertAdjacentHTML("afterend","<div id='buttons'></div");
+            this.table.insertAdjacentHTML("afterend","<div id='pagination-div'></div");
             this.sort(1);
         }
     }
