@@ -36,7 +36,7 @@
 		tr:hover:not(th) {background-color: rgba(237,28,64,.1);}
 
 
-		input[type="button"] {
+		input[class="pagination-button"] {
 		    transition: all .3s;
 		    border: 1px solid #ddd;
 		    padding: 8px 16px;
@@ -45,7 +45,16 @@
 		    font-size: 15px;
 		}
 
-		input[type="button"]:not(.active) {
+		input[class="pagination-button active"] {
+		    transition: all .3s;
+		    border: 1px solid #ddd;
+		    padding: 8px 16px;
+		    text-decoration: none;
+		    border-radius: 5px;
+		    font-size: 15px;
+		}
+
+		input[class="pagination-button"]:not(.active) {
 		    background-color:transparent;
 		}
 
@@ -54,7 +63,7 @@
 		    color :#fff;
 		}
 
-		input[type="button"]:hover:not(.active) {
+		input[class="pagination-button"]:hover:not(.active) {
 		    background-color: #ddd;
 		}
 	</style>
@@ -110,9 +119,16 @@
 	        <td>row #11 col2</td>
 	    </tr>
 	</table>
+<!-- 	https://codepen.io/bastony/post/tablesortingtutorial-js -->
 	<script type="text/javascript" src="js/simple_pagination.js"></script>
 	<script type="text/javascript">
-		
+		var sp = new SimplePagination({
+			tableId:"myTable",
+			rowPerPage:5
+		});
+		/*function sort(p) {
+			sp.sort(p);
+		}*/
 	</script>
 </body>
 </html>
